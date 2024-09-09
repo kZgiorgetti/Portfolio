@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#topHeader {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  border: 1px, solid salmon;
+  background-color: gray;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  flex-direction: row;
+  gap: 60px;
+}
+
+#topHeader a {
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+}
+
+#home {
+  border: 1px solid salmon;
+}
