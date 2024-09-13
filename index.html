@@ -9,15 +9,18 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portifolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="topHeader">
-      <a href="#">Home</a>
-      <a href="#">Sobre mim</a>
-      <a href="#">Serviços</a>
-      <a href="#">Trabalhos</a>
+    <img src="./assets/Logo.png" alt="logo">
+      <div id="navs">
+        <a href="#">Home</a>
+        <a href="#">Sobre mim</a>
+        <a href="#">Serviços</a>
+        <a href="#">Trabalhos</a>
+      </div>
     </div>
     <div id="home">
       <img id="fotoPerfil" src="./assets/ProfilePhoto.png" alt="fotoDePerfil" />
@@ -25,6 +28,7 @@
       <p id="legendaNome">Estudante & UI Designer</p>
     </div>
     <div id="sobreMim">
+      <img src="./assets/AMPhoto.png" alt="Foto sobre mim">
       <p id="tituloSM">Sobre mim</p>
       <p id="descricaoSM">
         Me chamo Kaio Maciel Giorgetti, sou estudante e UI Designer, moro em São
@@ -34,44 +38,51 @@
         desenvolver minhas habilidades em UI, UX, trabalho em equipe e
         comunicação.
       </p>
-      <p><span id="dado">Nome: </span>Kaio Maciel Giorgetti</p>
-      <p><span id="dado">Idade: </span>18 anos</p>
-      <p><span id="dado">Cidade: </span>São José do Rio Preto - SP</p>
-      <p><span id="dado">País: </span>Brasil</p>
-      <p><span id="dado">Idioma: </span>Português</p>
-      <p><span id="dado">Experiência: </span>1 ano</p>
-      <p><span id="dado">Skills: </span>UI/UX Design, HTML, CSS</p>
-      <p><span id="dado">E-mail: </span>kaiomacielgiorgetti@gmail.com</p>
+      <div id="dados">
+        <p><span id="dado">Nome: </span>Kaio Maciel Giorgetti</p>
+        <p><span id="dado">Idade: </span>18 anos</p>
+        <p><span id="dado">Cidade: </span>São José do Rio Preto - SP</p>
+        <p><span id="dado">País: </span>Brasil</p>
+        <p><span id="dado">Idioma: </span>Português</p>
+        <p><span id="dado">Experiência: </span>1 ano</p>
+        <p><span id="dado">Skills: </span>UI/UX Design, HTML, CSS</p>
+        <p><span id="dado">Freelance: </span>Indisponível</p>
+      </div>
     </div>
     <div id="servicos">
       <p id="tituloServicos">Serviços</p>
       <div id="webDesign">
-        <p id="tituloServicos">Web Design</p>
+        <i id="icone" class="ph ph-monitor"></i>
+        <p id="tituloWD">Web Design</p>
         <p id="descricaoServicos">
           Layouts responsivos, atraentes, e intuitivos, garantindo uma
           experiência memorável e confortável para o usuário.
         </p>
       </div>
       <div id="mobileDesign">
-        <p id="tituloServicos">Mobile Design</p>
+        <i id="icone"class="ph ph-device-mobile"></i>
+        <p id="tituloMD">Mobile Design</p>
         <p id="descricaoServicos">Interface otimizada para aparelhos móveis, proporciando interações intuitivas e eficientes proporcionando uma experiência ágil e envolvente.</p>
       </div>
       <div id="prototipos">
-        <p id="tituloServicos">Protótipo de interface</p>
-        <p id="descricaoServicos">Apresentação simples do funcionamento básico da interface em aparelhos móveis e websites</p>
+        <i id="icone" class="ph ph-presentation"></i>
+        <p id="tituloPI">Protótipo de interface</p>
+        <p id="descricaoServicos">Apresentação simples do funcionamento básico da interface em aparelhos móveis e websites.</p>
       </div>
     </div>
-    <div id="Trabalhos">
+    <div id="baseTrabalhos">
       <p id="tituloTrabalhos">Trabalhos</p>
-      <a href="#"> <img src="./assets/" alt="Capa do  arquivo"></a>
-      <a href="#"> <img src="./assets/" alt="Capa do  arquivo"></a>
+      <div id="capaTrabalhos">
+        <a href="#"> <img src="./assets/CapaTrabalho.png" alt="Capa do  arquivo"></a>
+        <a href="#"> <img src="./assets/CapaTrabalho.png" alt="Capa do  arquivo"></a>
+      </div>
     </div>
-    <div id="Contatos">
+    <div id="contatos">
       <p id="tituloContatos">Contatos</p>
       <div id="links">
-        <a href="#">kaiomacielgiorgetti@gmail.com</a>
-        <a href="#">@kgiorgett</a>
-        <a href="#">KGiorgetti</a>
+        <a href="#"><i id="iconeLinks" class="ph ph-envelope"></i> kaiomacielgiorgetti@gmail.com</a>
+        <a href="#"><i id="iconeLinks" class="ph ph-instagram-logo"></i> @kgiorgett</a>
+        <a href="#"><i id="iconeLinks" class="ph ph-pinterest-logo"></i> KGiorgetti</a>
       </div>
     </div>
   </body>
