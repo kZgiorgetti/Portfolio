@@ -257,7 +257,9 @@
   font-size: 36px;
   grid-column: 2;
   font-weight: bold;
-  color: rgba(113, 216, 104, 1);
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(113, 216, 104, 1);
   margin-bottom: 60px;
 }
 
@@ -348,13 +350,16 @@
   grid-row: 0;
   grid-column: 2;
   font-weight: bold;
-  color: rgba(113, 216, 104, 1);
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(113, 216, 104, 1);
   margin-bottom: 60px;
 }
 
 #capaTrabalhos {
   display: flex;
-  justify-content: space-around;
+  gap: 36px;
+  justify-content: center;
   grid-column: 1/5;
 }
 
@@ -378,13 +383,18 @@
   justify-content: center;
   font-size: 36px;
   font-weight: bold;
-  color: rgba(113, 216, 104, 1);
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(113, 216, 104, 1);
   margin-bottom: 60px;
 }
 
 #links {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 #contatos a {
@@ -403,7 +413,11 @@
   min-width: 32%;
   border-radius: 8px;
   gap: 12px;
-  flex-wrap: wrap;
+  transition: all 0.4s;
+}
+
+#contatos a:hover {
+  background-color: rgba(41, 41, 41, 1);
 }
 
 #iconeLinks {
@@ -415,3 +429,133 @@
   
 }
 
+
+/* Responsivo */
+@media screen and (max-width: 834px) {
+  
+  /* Header */
+
+  #topHeader img {
+    display: flex;
+    margin-left: 32px;
+  }
+
+  #topHeader {
+    padding-left: 0px;
+    padding-right: 0px;
+    align-items: start;
+    
+  }
+
+
+  #navs {
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 32px;
+    margin-left: 32px;
+
+  }
+
+
+  /* Sobre Mim */
+
+  #sobreMim img {
+    display: none;
+  }
+  
+  #sobreMim {
+    display: grid;
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-top: 60px;
+    gap: 0px;
+  }
+
+  #tituloSM {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+
+  #descricaoSM {
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+
+  #dados {
+    margin-left: 0px;
+    margin-bottom: 60px;
+  }
+
+
+  /* Serviços */
+
+  #servicos {
+    padding-top: 0px;
+    padding-left: 52px;
+    padding-right: 52px;
+    gap: 20px;
+    padding-bottom: 60px;
+  }
+
+  #tituloServicos {
+    margin-bottom: 20px;
+  }
+
+  #descricaoServicos {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #tituloPI {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  #tituloMD {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+  }
+
+  #tituloWD {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+  }
+
+  #icone {
+    margin-top: 20px;
+  }
+
+
+  /* Contatos */
+
+  #contatos {
+    padding-left: 52px;
+    padding-right: 52px;
+    padding-top: 60px;
+  }
+
+  #links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    grid-auto-flow: row;
+  }
+
+  #contatos a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  #iconeLinks {
+    font-size: 20px;
+    margin-right: 0px;
+  }
+
+
+
+}
