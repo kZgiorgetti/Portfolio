@@ -104,8 +104,7 @@
 
 #topHeader {
   display: flex;
-  background-color: rgba(34, 34, 34, 1);
-  padding-top: 20px;
+  padding-top: 24px;
   padding-bottom: 20px;
   padding-left: 80px;
   padding-right: 128px;
@@ -123,7 +122,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 48px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -134,7 +133,7 @@
   color: white;
   list-style: none;
   font-size: 20px;
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 
 #topHeader a:hover {
@@ -338,8 +337,6 @@
 #baseTrabalhos {
   padding-left: 128px;
   padding-right: 128px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   background-color: rgba(34, 34, 34, 1);
 }
 
@@ -353,40 +350,69 @@
   color: white;
   text-decoration: underline;
   text-decoration-color: rgba(113, 216, 104, 1);
-  margin-bottom: 60px;
+  background-color: rgba(34, 34, 34, 1);
+  padding-bottom: 60px;
 }
 
-#capaTrabalhos {
-  display: flex;
-  gap: 36px;
-  justify-content: center;
-  grid-column: 1/5;
+
+.slideContainer {
+  margin: auto;
+  width: 100%;
+  position: relative;
+  max-width: 1024px;
 }
 
-#capaTrabalhos img {
-  width: 492px;
+.slide img {
+  max-width: 100%;
+  
 }
+
+.slide {
+  display: none;
+  margin: auto;
+  transition: all 0.5s ease-out;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.next {
+  right: 0;
+}
+
+
 
 /* ------------------------------------------ */
 /* Contatos */
 
-#contatos {
+.contatos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 36px;
   padding-left: 128px;
   padding-right: 128px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
   background-color: rgba(34, 34, 34, 1);
 }
 
 #tituloContatos {
   display: flex;
   justify-content: center;
+  padding-top: 60px;
   font-size: 36px;
   font-weight: bold;
   color: white;
   text-decoration: underline;
   text-decoration-color: rgba(113, 216, 104, 1);
-  margin-bottom: 60px;
+  background-color: rgba(34, 34, 34, 1);
 }
 
 #links {
@@ -395,9 +421,15 @@
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 1;
+  gap: 16px;
 }
 
-#contatos a {
+#links {
+  padding: 0px 128px 60px;
+  background-color: rgba(34, 34, 34, 1);
+}
+
+#links a {
   display: inline-flex;
   background-color: rgba(50, 50, 50, 1);
   color: white;
@@ -416,7 +448,7 @@
   transition: all 0.4s;
 }
 
-#contatos a:hover {
+#links a:hover {
   background-color: rgba(41, 41, 41, 1);
 }
 
@@ -426,12 +458,78 @@
   margin-right: 8px;
   align-items: baseline;
   vertical-align: middle;
-  
 }
 
+.formulario {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1;
+  padding-bottom: 60px;
+}
+
+input {
+  color: white;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgba(50, 50, 50, 1);
+  outline: none;
+  border: none;
+  padding: 8px 0px 8px 12px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  height: 140px;
+  border-radius: 8px;
+  background-color: rgba(50, 50, 50, 1);
+  outline: none;
+  border: none;
+  padding: 8px 0px 8px 12px;
+  margin-bottom: 32px;
+  resize: none;
+  font-size: 16px;
+  color: white;
+}
+
+textarea::placeholder {
+  font-size: 16px;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+label {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.contatos img {
+  margin: auto;
+}
+
+button {
+  height: 40px;
+  width: 180px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: rgba(113, 216, 104, 1);
+  border: none;
+  color: rgba(34, 34, 34, 1);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+button:hover {
+  background-color: rgba(113, 216, 104, 0.6)
+
+}
 
 /* Responsivo */
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 884px) {
   
   /* Header */
 
@@ -533,20 +631,17 @@
 
   /* Contatos */
 
-  #contatos {
-    padding-left: 52px;
-    padding-right: 52px;
-    padding-top: 60px;
-  }
 
   #links {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
     grid-auto-flow: row;
+    padding-left: 52px;
+    padding-right: 52px;
   }
 
-  #contatos a {
+  #links a {
     padding-top: 12px;
     padding-bottom: 12px;
   }
@@ -555,6 +650,116 @@
     font-size: 20px;
     margin-right: 0px;
   }
+
+  .contatos {
+    grid-template-columns: 1fr;
+    padding-left: 52px;
+    padding-right: 52px;
+  }
+
+  .contatos img {
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  
+  #topHeader a {
+    display: none;
+  }
+
+  #nome {
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 24px;
+  }
+
+  #legendaNome {
+    font-size: 16px;
+  }
+
+  #nome img {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+
+  /* Sobre Mim */
+  #sobreMim {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+  }
+
+  #tituloSM {
+    grid-column: 1;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 28px;
+  }
+
+  #descricaoSM {
+    grid-column: 1;
+    font-size: 20px;
+  }
+
+  #dados {
+    grid-column: 1;
+    grid-row: 0;
+    grid-template-columns: 1fr;
+    margin-left: 0px;
+  }
+
+
+  /* Serviços */
+  #tituloServicos {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 28px;
+    margin-bottom: 0px;
+  }
+
+  #servicos {
+    grid-template-columns: 1fr;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 0px;
+  }
+
+  #webDesign {
+    grid-column: 1;
+  }
+
+  #mobileDesign {
+    grid-column: 1;
+  }
+
+  #prototipos {
+    grid-column: 1;
+  }
+
+
+  /* Contatos */
+  #contatos {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+  }
+
+  #tituloContatos {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+
+  #links {
+    grid-template-columns: 1fr;
+    
+  }
+
 
 
 

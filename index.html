@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <link rel="shortcut icon" type="imagex.png" href="./assets/Icone.ico">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +14,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="topHeader">
-    <img src="./assets/Logo.png" alt="logo">
-      <div id="navs">
-        <a href="#paraSM">Sobre mim</a>
-        <a href="#paraServ">Serviços</a>
-        <a href="#paraTrab">Trabalhos</a>
-        <a href="#paraCont">Contatos</a>
-      </div>
-    </div>
     <div id="home">
+      <div id="topHeader">
+        <img src="./assets/Logo.png" alt="logo">
+          <div id="navs">
+            <a href="#paraSM">Sobre mim</a>
+            <a href="#paraServ">Serviços</a>
+            <a href="#paraTrab">Trabalhos</a>
+            <a href="#paraCont">Contatos</a>
+          </div>
+        </div>
       <img id="fotoPerfil" src="./assets/ProfilePhoto.png" alt="fotoDePerfil" />
       <p id="nome">Kaio Maciel Giorgetti</p>
       <p id="legendaNome">Estudante & UI Designer</p>
@@ -73,21 +74,81 @@
       </div>
     </div>
     <div id="paraTrab"></div>
+    <p id="tituloTrabalhos">Trabalhos</p>
     <div id="baseTrabalhos">
-      <p id="tituloTrabalhos">Trabalhos</p>
-      <div id="capaTrabalhos">
-        <a href="#" target="_blank"> <img src="./assets/CapaTrabalho.png" alt="Capa do  arquivo"></a>
-        <a href="#" target="_blank"> <img src="./assets/CapaTrabalho.png" alt="Capa do  arquivo"></a>
+      <div class="slideContainer">
+        <div class="slide">
+          <img src="./assets/CapaTrabalho.png" alt="Capa do  arquivo">
+        </div>
+        <div class="slide">
+          <img src="./assets/MailSentRafiki.svg" alt="Capa do  arquivo">
+        </div>
+        <div class="slide">
+          <img src="./assets/Capa School Landing Page.png" alt="Capa do arquivo">
+        </div>
+        <a class="prev" onclick="navigate(-1)">&#10094;</a>
+        <a class="next" onclick="navigate(1)">&#10095;</a>
       </div>
     </div>
     <div id="paraCont"></div>
-    <div id="contatos">
-      <p id="tituloContatos">Contatos</p>
-      <div id="links">
-        <a href="#" target="_blank"><i id="iconeLinks" class="ph ph-envelope"></i> kaiomacielgiorgetti@gmail.com</a>
-        <a href="https://www.instagram.com/kgiorgett?igsh=OWxoanVycTh3bWJ0" target="_blank"><i id="iconeLinks" class="ph ph-instagram-logo"></i> @kgiorgett</a>
-        <a href="https://br.pinterest.com/KGiorgett/_created/" target="_blank"><i id="iconeLinks" class="ph ph-pinterest-logo"></i> KGiorgetti</a>
-      </div>
+    <p id="tituloContatos">Contatos</p>
+    <div class="contatos">
+        <form class="formulario" onsubmit="teste(event)">
+          <label for="name">Nome</label>
+          <input id="name" type="text" placeholder="Kaio Giorgetti"/>
+          <label for="e-mail">E-mail</label>
+          <input id="e-mail" type="email" placeholder="user.kaiogiorgetti@gmail.com"/>
+          <label for="message">Mensagem</label>
+          <textarea id="message" type="text" placeholder="Escreva sua mensagem aqui"></textarea>
+          <button>Enviar mensagem</button>
+        </form>
+        <img src="./assets/MailSentRafiki.svg" alt="">
+    </div>
+    <div id="links">
+      <a href="#" target="_blank"><i id="iconeLinks" class="ph ph-envelope"></i> user.kaiogiorgetti@gmail.com</a>
+      <a href="https://www.instagram.com/kgiorgett?igsh=OWxoanVycTh3bWJ0" target="_blank"><i id="iconeLinks" class="ph ph-instagram-logo"></i> @kgiorgett</a>
+      <a href="https://br.pinterest.com/kZgiorgetti/_profile/_created/" target="_blank"><i id="iconeLinks" class="ph ph-pinterest-logo"></i> kZgiorgetti</a>
+      <a href="https://github.com/kZgiorgetti" target="_blank"><i id="iconeLinks" class="ph ph-github-logo"></i>kZgiorgetti</a>
+      <a href="https://www.behance.net/kaiogiorgetti" target="_blank"><i id="iconeLinks" class="ph ph-behance-logo"></i>Kaio Giorgetti</a>
+      <a href="https://dribbble.com/KGiorgetti" target="_blank"><i id="iconeLinks" class="ph ph-dribbble-logo"></i>Kaio Giorgetti</a>
     </div>
   </body>
+  <script>
+    // function teste(e){
+    //   e.preventDefault()
+    //   const name = document.getElementById("name")
+    //   const email = document.getElementById("e-mail")
+    //   const message = document.getElementById("message")
+
+    //   console.log(name.value, email.value, message.value)
+    // }
+
+    let slideIndex = 1
+    showSlides(slideIndex)
+    function navigate(n){
+      slideIndex = slideIndex + n
+      showSlides(slideIndex)
+    }
+
+    function showSlides(n){
+      console.log("n",n)
+      const slide = document.getElementsByClassName("slide")
+      if(n>slide.length){
+        slideIndex = 1
+      }
+      if(n<1){
+        slideIndex = slide.length
+      }
+      
+      for(let i = 0; i<slide.length; i++){
+        slide[i].style.opacity = 0;
+        setTimeout(()=>slide[i].style.display = "none", 500)
+      }
+      console.log("slideIndex", slideIndex)
+      slide[slideIndex - 1].style.opacity = 1;
+      setTimeout(()=>slide[slideIndex-1].style.display = "block", 500)
+      
+    }
+
+  </script>
 </html>
